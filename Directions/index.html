@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <!-- background image taken from
+            http://www.surrey.ca/city-services/13365.aspx-->
+    </head>
+    <body onload="init()">
+        <div class="w3-bar w3-cyan w3-card w3-margin-bottom">
+            <H3 class="w3-padding">Super Awesome Directions</H3>
+        </div>
+        <div id="locations-panel">
+            <div class="w3-card w3-cyan w3-padding-left" id="locations-panel-title">
+                <h2>Plan Your Trip</h2>
+            </div>
+            <div class="w3-container w3-card-4  w3-white" id="locations-panel-body">
+
+                <p>
+                    <label class="w3-text-blue" >Mode Of Transportation:
+                        <select class="w3-input" id="mode" onchange="calcRoute();">
+                            <option value="DRIVING">Driving</option>
+                            <option value="WALKING">Walking</option>
+                            <option value="BICYCLING">Bicycling</option>
+                            <option value="TRANSIT">Transit</option>
+                        </select>
+
+                    </label>
+                </p>
+                <p>
+                    <label class="w3-text-blue" >Start Location:
+                        <input class="w3-input w3-border" id="start" type="text" />
+                    </label>
+                </p>
+
+                <p>
+                    <label class="w3-text-blue" >Destination:
+                        <input class="w3-input w3-border" id="finish" type="text" />
+                    </label>
+                </p>
+
+                <p>
+                    <input type="submit" id="submit">
+                </p>
+                <div class="loader"  id="loader" style="display: none"></div>
+                <div id="error"><!-- error --></div>
+            </div>
+        </div>
+
+
+        <div class="w3-container w3-card-4 w3-round-large" id="directions-panel">
+            <p>Waiting for directions</p>
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbJl9dBvmipFnKj5Hmq1QNsgmZwS8wS0M">
+        </script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
